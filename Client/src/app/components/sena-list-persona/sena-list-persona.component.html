@@ -1,0 +1,40 @@
+
+
+
+<div class="row">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements; let i = index" scope="col">
+          {{head}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of personasList">
+        <th scope="row">{{person.id_persona}}</th>
+        <td>{{person.nombres}}</td>
+        <td>{{person.apellidos}}</td>
+        <td>{{person.numero_documento}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!--<div class="col-md-4" *ngFor="let person of personasList">
+    <div class="card text-center">
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        {{person.nombres}}
+        <button class="btn btn-danger" (click)="deletePersona(person.id_persona)">
+          <i class="far fa-trash-alt"></i>
+        </button>
+      </div>
+     
+      <div class="card-body">
+        <p>{{person.apellidos}}</p>
+        <a  class="btn btn-info btn-block">
+          EDIT PERSONA
+        </a>
+      </div>
+    </div>
+  </div>-->
+</div>

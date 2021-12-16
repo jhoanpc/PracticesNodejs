@@ -1,0 +1,62 @@
+
+<div class="row">
+    <input type="text" id="myInput" placeholder="Buscar en personas" title="Buscar"/>
+    
+  </div>
+
+<div class="row">
+
+    <div class="row"><button type="button" class="btn btn-success">Nuevo</button></div>
+    <div>
+    <table class="table" id="myTable">
+      <thead>
+        <tr>
+          <th *ngFor="let head of headElements; let i = index" scope="col">
+            {{head}}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of personas">
+          
+          <th scope="row" >{{person.id_persona}}</th>
+          <td>{{person.nombres}}</td>
+          <td>{{person.apellidos}}</td>
+          <td>{{person.numero_documento}}</td>
+          <td >{{person.id_registro_horas}}</td>
+          <td>{{person.horas_iniciales}}</td>
+          <td>{{person.horas_restantes}}</td>
+          <td><div><button class="btn btn-danger" >
+            <i class="far fa-trash-alt"></i>
+          </button></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-group">
+    <label>Buscar por numero documento o nombre de persona</label>
+  <input type="text" class="form-control" id="idSearchPerson" aria-describedby="emailHelp" placeholder="Nombre o documento" (keyup)="buscarPersona($event)" />
+  {{searchText}}
+ </div>
+</div>
+<div class="row">
+  <div class="card border-primary mb-3" style="max-width: 20rem;">
+    <div class="card-header">Nuevo registro horas</div>
+
+    <div class="card-body">
+      <h2 class="card-title">'{{persona.id_persona}}'</h2>
+      <h2 class="card-title">'{{persona.nombres}}'</h2>
+      <h2 class="card-title">'{{persona.apellidos}}'</h2>
+      <h2 class="card-title">'{{persona.numero_documento}}'</h2>
+      <input type="text" class="form-control" id="NroHorasIniciales" aria-describedby="aria" placeholder="1000" value="{{registroHoras.horas_iniciales}}"/>
+      <input type="text" class="form-control" id="NroHorasFinales" aria-describedby="aria" placeholder="1000" value="{{registroHoras.horas_restantes}}"/>
+      
+      <p class="card-text"></p>
+    </div>
+    <button type="submit" onclick="guard">Guardar</button>
+  </div>
+
+</div>
